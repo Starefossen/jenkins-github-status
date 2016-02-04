@@ -4,7 +4,7 @@
   "description": "Jenkins GitHub Build Status for Node.JS CI",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint test/ lib/ apps/ index.js",
+    "lint": "eslint test/ lib/ index.js",
     "semantic-release": "semantic-release",
     "start": "supervisor index.js",
     "test": "mocha -r test/support/env -b -c --check-leaks -R tap test/",
