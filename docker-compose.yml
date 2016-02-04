@@ -14,8 +14,9 @@ dev:
         - IRC_CHANNEL=#jenkins-monitor-dev
         - IRC_SERVER=chat.freenode.net
         - IRC_USER=jenkins-build-dev
-        - JENKINS_URL=https://ci.nodejs.org
-        - NODE_ENV=development
         - JENKINS_GH_ORG=nodejs
         - JENKINS_GH_PR=4215
         - JENKINS_GH_REPO=node
+        - JENKINS_URL=https://ci.nodejs.org
+        - NODE_ENV=development
+        - REDIS_KEY_PREFIX=jenkins:build:
