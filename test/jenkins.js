@@ -47,8 +47,12 @@ describe('jenkins', function () {
   });
 
   describe('getBuildsUrl()', function () {
-    it.skip('returns a generator for builds url', function () {
-      // console.log(jenkins.getBuildsUrl(0, 10));
+    it('returns jenkins builds api url', function () {
+      assert.equal(jenkins.getBuildsUrl(0, 10), [
+        'https://ci.nodejs.org/job/node-test-pull-request/api/json',
+        '?depth=2&tree=builds[duration,timestamp,id,building,',
+        'actions[parameters[name,value]]]{0,10}',
+      ].join(''));
     });
   });
 
