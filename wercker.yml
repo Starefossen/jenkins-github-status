@@ -1,7 +1,7 @@
 box: node:argon
 
 services:
-  - redis
+  - redis:3.0
 
 build:
   steps:
