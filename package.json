@@ -1,0 +1,45 @@
+{
+  "name": "jenkins-github-status",
+  "version": null,
+  "description": "Jenkins GitHub Build Status for Node.JS CI",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint test/ lib/ apps/ index.js",
+    "semantic-release": "semantic-release",
+    "start": "supervisor index.js",
+    "test": "mocha -r test/support/env -b -c --check-leaks -R tap test/",
+    "watch": "mocha -r test/support/env -b -c --check-leaks -R progress -w test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/starefossen/jenkins-github-status.git"
+  },
+  "keywords": [
+    "Jenkins",
+    "GitHub",
+    "Status"
+  ],
+  "author": "Hans Kristian Flaatten <hans@starefossen.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/starefossen/jenkins-github-status/issues"
+  },
+  "homepage": "https://github.com/starefossen/jenkins-github-status#readme",
+  "dependencies": {
+    "async-each-map": "^1.0.1",
+    "ioredis": "^1.15.0",
+    "irc": "^0.4.1",
+    "jsonist": "^1.3.0",
+    "node-schedule": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.2",
+    "eslint-config-airbnb": "^5.0.0",
+    "mocha": "^2.4.5",
+    "semantic-release": "^4.3.5",
+    "supervisor": "^0.9.1"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
+}
