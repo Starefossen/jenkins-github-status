@@ -87,7 +87,7 @@ describe('jenkins', function () {
   });
 
   describe('getBuild()', function () {
-    it.only('returns build for build id', function (done) {
+    it('returns build for build id', function (done) {
       this.timeout(5000);
 
       jenkins.getBuild(1519, (err, build) => {
