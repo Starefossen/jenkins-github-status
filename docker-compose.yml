@@ -19,4 +19,4 @@ dev:
         - JENKINS_GH_REPO=node
         - JENKINS_URL=https://ci.nodejs.org
         - NODE_ENV=development
-        - REDIS_KEY_PREFIX=jenkins:build:
+        - REDIS_KEY_PREFIX="jenkins:build:"
