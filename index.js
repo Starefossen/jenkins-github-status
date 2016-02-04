@@ -17,6 +17,7 @@ schedule.scheduleJob('* * * * *', () => {
       if (exists === 1) { return next(); }
 
       console.log('[CRON]', key, 'NEW');
+      redis.rpush('builds', b.id);
 
       redis.hmset(key, b, setErr => {
         if (setErr) { return next(setErr); }
