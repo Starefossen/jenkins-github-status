@@ -1,0 +1,21 @@
+redis:
+    image: redis:3.0
+
+dev:
+    image: node:argon
+    working_dir: /usr/src/app
+    links:
+        - redis
+    volumes:
+        - .:/usr/src/app
+    command: npm start
+    env_file: .env.dev
+    environment:
+        - IRC_CHANNEL=#jenkins-monitor-dev
+        - IRC_SERVER=chat.freenode.net
+        - IRC_USER=jenkins-build-dev
+        - JENKINS_URL=https://ci.nodejs.org
+        - NODE_ENV=development
+        - JENKINS_GH_ORG=nodejs
+        - JENKINS_GH_PR=4215
+        - JENKINS_GH_REPO=node
